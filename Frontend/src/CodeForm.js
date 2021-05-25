@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import './CodeForm.css';
+import logo from './Logo.png';
 
 class CodeForm extends Component
-{
+{    
     constructor(props)
     {
         super(props)
@@ -41,8 +43,6 @@ class CodeForm extends Component
 
         this.state.code = this.state.code.join(' ')
 
-        console.log(this.state)
-
         axios.post('http://localhost:8080/run', this.state)
         .then(response =>
             {
@@ -57,42 +57,48 @@ class CodeForm extends Component
                     }
                 )
             })
+
+            console.log(this.state)
     }
 
     render()
     {
         
-
         return(
 
-            <center>
-            <div>    
+            <div className = "main_div">
+
+            <div className = "menu_div">
+
+                <img src = {logo} className = "logo" />
+
+            </div>
+
+            <div className = "compiler_div">
+
+                <h2>Enter JAVA code below</h2>
+
             <form className = "form" onSubmit = {this.SubmitHandler}>
 
 
-                <textarea name="code" onChange = {this.ChangeHandler}></textarea>
-
-                <p></p>
+                <textarea name="code" onChange = {this.ChangeHandler} className = "code_text"></textarea>
 
                 <button type="submit">Run</button>
 
             </form>
-            <p></p>
-
-            <b>Output:</b> {this.state.output}
-            <br></br>
-
-            <b>Compile Error:</b> {this.state.compileError}
-            <br></br>
-
-            <b>Runtime Error:</b> {this.state.runtimeError}
-            <br></br>
-
-            <b>Time to Run:</b> {this.state.timeToRun} ms
-            <br></br>
             </div>
 
-            </center>
+            <div className = "output_div">
+
+            <p><b>Output</b> <span>{this.state.output}</span></p>
+            <p><b>Compile Error</b> <span>{this.state.compileError}</span></p>
+            <p><b>Runtime Error</b> <span>{this.state.runtimeError}</span></p>
+            <p><b>Time to Run</b> <span>{this.state.timeToRun} ms</span></p>
+            
+            </div>
+
+            </div>
+
         )
     }
 }

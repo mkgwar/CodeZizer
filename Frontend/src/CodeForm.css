@@ -1,0 +1,97 @@
+.code_text
+{
+    width: 80%;
+    height: 300px;
+    resize: none;
+    display: block;
+    margin: 10% 5%;
+    margin-bottom: 3%;
+    padding: 3%;
+    margin-top: 5px;
+}
+
+.compiler_div
+{
+    float: left;
+    height: 510px;
+    width:50%;
+    background: white;
+    margin-left: 25px;
+    box-shadow: 0px 0px 1px  grey;
+    border: 1px solid grey;
+}
+
+.output_div
+{
+    float:left;
+    width: 45%;
+    height: 510px;
+    background: white;
+    margin-left: 25px;
+    box-shadow: 0px 0px 1px  grey;
+    border: 1px solid grey;
+}
+
+.form button
+{
+    padding: 2% 5%;
+    font-weight: bold;
+    background:white;
+    color: black;
+    float: right;
+    margin-right: 10%;
+    margin-bottom: 3%;
+    border: 1px solid black;
+    box-shadow: none;
+    border-radius: 50px;
+}
+
+.form button:hover
+{
+    background:black;
+    color: white;
+}
+
+.output_div p
+{
+    float: left;
+    margin: 5%;
+    overflow-wrap: inherit;
+    max-height: 50px;
+    max-width: 20%;
+}
+
+.output_div span
+{
+    text-align: center;
+    display: block;
+    margin-top: 10%;
+}
+
+.logo
+{
+    width: 20%;
+    margin: 20px 50px;
+
+}
+
+.menu_div
+{
+    background: rgb(255, 255, 255);
+    border-bottom: 5px solid black;
+    margin-bottom: 25px;
+    padding: 0px;
+}
+
+.compiler_div h2
+{
+    margin: 30px 30px;
+    font-size: 1em;
+}
+
+.main_div
+{
+    background: white;
+    width: 100%;
+    height: 100%;
+}
