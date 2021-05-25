@@ -16,7 +16,7 @@ public class CodeRunService {
         this.logger.info("RUNNING CODE " + request.code);
         CodeRunResponse response = new CodeRunResponse();
         // writes the code to a unique file with some unique name
-        String fileName = "Javacode-" + System.currentTimeMillis() + ".java"; // unique name for each file
+        String fileName = request.mainClassName + ".java"; // unique name for each file
         PrintWriter out = new PrintWriter(fileName);
         out.println(request.code); // write code to file
         out.close(); // close file
