@@ -9,6 +9,8 @@
     padding: 3%;
     margin-top: 5px;
     outline: none;
+    border: 1px solid lightgrey;
+    font-size: 1.1em;
 }
 
 .compiler_div
@@ -18,8 +20,7 @@
     width:50%;
     background: white;
     margin-left: 25px;
-    box-shadow: 0px 0px 1px  grey;
-    border: 1px solid grey;
+    box-shadow: 0px 0px 5px  grey;
 }
 
 .output_div
@@ -29,22 +30,22 @@
     height: 510px;
     background: white;
     margin-left: 25px;
-    box-shadow: 0px 0px 1px  grey;
-    border: 1px solid grey;
+    box-shadow: 0px 0px 5px  grey;
+    
 }
 
 .form button
 {
     padding: 2% 5%;
     font-weight: bold;
-    background:white;
-    color: black;
+    background:#1cac4d;
+    color: white;
     float: right;
     margin-right: 10%;
     margin-bottom: 3%;
-    border: 1px solid black;
-    box-shadow: none;
-    border-radius: 50px;
+    box-shadow: 0px 0px 10px  grey;
+    border: none;
+    border-radius: 10px;
 }
 
 .form button:hover
@@ -55,10 +56,9 @@
 
 .output_div p
 {
-    float: left;
     margin: 5%;
-    overflow-wrap: inherit;
-    max-width: 150px;
+    margin-bottom: 20%;
+    display: block;
 }
 
 .output_div span
@@ -66,22 +66,23 @@
     text-align: center;
     display: block;
     margin-top: 10%;
-    max-width: 60px;
+    font-size: 1.1em;
+    font-weight: 500;
 }
 
 .logo
 {
     width: 20%;
     margin: 20px 50px;
-
 }
 
 .menu_div
 {
-    background: rgb(255, 255, 255);
-    border-bottom: 5px solid black;
+    background: #3b434b;
+    border-bottom: 5px solid #1cac4d;
     margin-bottom: 25px;
     padding: 0px;
+    box-shadow: 0px 0px 5px  grey;
 }
 
 .compiler_div h2
@@ -92,7 +93,26 @@
 
 .main_div
 {
-    background: white;
-    width: 100%;
-    height: 100%;
+    background: #f3f3f3;
+    position:fixed;
+    width:100%;
+    height:100%;
+    overflow-y: scroll
+}
+
+.output_result
+{
+    color: #1cac4d;
+}
+
+.compile_result, .runtime_result
+{
+    color: rgb(192, 79, 79);
+}
+
+.timer_result
+{
+    font-family: "Agency FB";
+    font-weight: bold;
+    font-size: 1.2em;
 }

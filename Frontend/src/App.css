@@ -36,10 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-.form textarea
-{
-  width: 50%;
-  height: 300px;
-  resize: none;
-}

@@ -51,7 +51,7 @@ class CodeForm extends Component
                 (
                     {
                         output: response.data.output,
-                        compileError: response.data.compileError,
+                        compileError: "Compile error:\n" + response.data.compileError,
                         runtimeError: response.data.runtimeError,
                         timeToRun: response.data.timeToRun + " ms"
                     }
@@ -90,10 +90,19 @@ class CodeForm extends Component
 
             <div className = "output_div">
 
-            <p><b>Output</b> <span>{this.state.output}</span></p>
-            <p><b>Compile Error</b> <span>{this.state.compileError}</span></p>
-            <p><b>Runtime Error</b> <span>{this.state.runtimeError}</span></p>
-            <p><b>Time to Run</b> <span>{this.state.timeToRun}</span></p>
+            <p><b>Output</b>
+            <span>
+               <div className="output_result">{this.state.output}</div> 
+               <div className="compile_result">{this.state.compileError}</div> 
+               <div className="runtime_result"> {this.state.runtimeError}</div> 
+            </span>
+            </p>
+
+            <p><b>Time to Run</b>
+            <span>
+               <div className= "timer_result"> {this.state.timeToRun} </div>
+            </span>
+            </p>
             
             </div>
 
