@@ -4,7 +4,7 @@ import './CodeForm.css';
 import logo from './Logo.png';
 import CodeMirror from '@uiw/react-codemirror';
 import 'codemirror/keymap/sublime';
-import 'codemirror/theme/idea.css';
+import 'codemirror/theme/monokai.css';
 
 class CodeForm extends Component
 {    
@@ -94,7 +94,7 @@ class CodeForm extends Component
 
                 options=
                 {{
-                    theme: 'idea',
+                    theme: 'monokai',
                     keyMap: 'sublime',
                     mode: 'java',
                 }}
