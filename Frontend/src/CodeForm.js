@@ -16,7 +16,7 @@ class CodeForm extends Component
             output : '',
             compileError: '',
             runtimeError: '',
-            timeToRun: 0
+            timeToRun: ''
         }
     }
 
@@ -53,7 +53,7 @@ class CodeForm extends Component
                         output: response.data.output,
                         compileError: response.data.compileError,
                         runtimeError: response.data.runtimeError,
-                        timeToRun: response.data.timeToRun
+                        timeToRun: response.data.timeToRun + " ms"
                     }
                 )
             })
@@ -93,7 +93,7 @@ class CodeForm extends Component
             <p><b>Output</b> <span>{this.state.output}</span></p>
             <p><b>Compile Error</b> <span>{this.state.compileError}</span></p>
             <p><b>Runtime Error</b> <span>{this.state.runtimeError}</span></p>
-            <p><b>Time to Run</b> <span>{this.state.timeToRun} ms</span></p>
+            <p><b>Time to Run</b> <span>{this.state.timeToRun}</span></p>
             
             </div>
 
