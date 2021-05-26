@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import './CodeForm.css';
 import logo from './Logo.png';
+import CodeMirror from '@uiw/react-codemirror';
+import 'codemirror/keymap/sublime';
+import 'codemirror/theme/idea.css';
 
 class CodeForm extends Component
 {    
@@ -20,16 +23,20 @@ class CodeForm extends Component
         }
     }
 
-    ChangeHandler = e => 
+    ChangeHandler = e =>
     {
-        this.setState( {[e.target.name]: e.target.value})
+        this.setState(
+            {
+                code : e.getValue()
+            }
+        )
     }
 
     SubmitHandler = e =>
     {
         e.preventDefault()
 
-        this.state.code = this.state.code.replace(/\s+/g, ' ')
+        this.state.code = this.state.code.replace('\n', ' ')
         this.state.code = this.state.code.split(' ')
 
         for (let i = 0; i < this.state.code.length ; i++)
@@ -51,7 +58,7 @@ class CodeForm extends Component
                 (
                     {
                         output: response.data.output,
-                        compileError: "Compile error:\n" + response.data.compileError,
+                        compileError: response.data.compileError,
                         runtimeError: response.data.runtimeError,
                         timeToRun: response.data.timeToRun + " ms"
                     }
@@ -62,8 +69,7 @@ class CodeForm extends Component
     }
 
     render()
-    {
-        
+    {        
         return(
 
             <div className = "main_div">
@@ -80,8 +86,20 @@ class CodeForm extends Component
 
             <form className = "form" onSubmit = {this.SubmitHandler}>
 
+            <div className = "code_text">
 
-                <textarea name="code" onChange = {this.ChangeHandler} className = "code_text"></textarea>
+            <CodeMirror
+
+                onChange = {this.ChangeHandler}
+
+                options=
+                {{
+                    theme: 'idea',
+                    keyMap: 'sublime',
+                    mode: 'java',
+                }}
+                />
+                </div>
 
                 <button type="submit">Run</button>
 
