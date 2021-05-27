@@ -5,6 +5,7 @@ import logo from './Logo.png';
 import CodeMirror from '@uiw/react-codemirror';
 import 'codemirror/keymap/sublime';
 import 'codemirror/theme/monokai.css';
+import logogif from './Codezizer.gif'
 
 class CodeForm extends Component
 {    
@@ -30,6 +31,11 @@ class CodeForm extends Component
                 code : e.getValue()
             }
         )
+    }
+
+    ResetCode()
+    {
+        document.querySelector('.CodeMirror').CodeMirror.setValue('')
     }
 
     SubmitHandler = e =>
@@ -69,12 +75,14 @@ class CodeForm extends Component
     }
 
     render()
-    {        
+    {      
         return(
 
             <div className = "main_div">
 
             <div className = "menu_div">
+
+                <img src = {logogif} className = "logo_gif" />
 
                 <img src = {logo} className = "logo" />
 
@@ -99,9 +107,12 @@ class CodeForm extends Component
                     mode: 'java',
                 }}
                 />
+
                 </div>
 
-                <button type="submit">Run</button>
+                <button type="submit" className = "submit_button">Run</button>
+
+                <button onClick = {this.ResetCode} className = "reset_button">Reset</button>
 
             </form>
             </div>
@@ -112,7 +123,7 @@ class CodeForm extends Component
             <span>
                <div className="output_result">{this.state.output}</div> 
                <div className="compile_result">{this.state.compileError}</div> 
-               <div className="runtime_result"> {this.state.runtimeError}</div> 
+               <div className="runtime_result">{this.state.runtimeError}</div>
             </span>
             </p>
 

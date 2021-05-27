@@ -31,7 +31,7 @@
     
 }
 
-.form button
+.submit_button
 {
     padding: 2% 5%;
     font-weight: bold;
@@ -43,6 +43,26 @@
     box-shadow: 0px 0px 5px  grey;
     border: none;
     border-radius: 10px;
+}
+
+.submit_button:hover
+{
+    background:black;
+    color: white;
+}
+
+.reset_button
+{
+    padding: 2% 5%;
+    font-weight: bold;
+    color: black;
+    float: right;
+    margin-right: 5%;
+    margin-bottom: 3%;
+    box-shadow: 0px 0px 5px  grey;
+    border: none;
+    border-radius: 10px;
+    outline: none;
 }
 
 .output_div p
@@ -68,7 +88,7 @@
 .logo
 {
     width: 20%;
-    margin: 20px 50px;
+    margin: 20px 10px;
 }
 
 .menu_div
@@ -114,4 +134,11 @@
     display: block;
     margin-top: 10%;
     margin-bottom: none;
+}
+
+.logo_gif
+{
+    width: 80px;
+    height: 80px;
+    margin-left: 3%;
 }
