@@ -13,12 +13,13 @@ public class CodeRunService {
     private Logger logger = LoggerFactory.getLogger(CodeRunService.class);
 
     public CodeRunResponse runCode(CodeRunRequest request) throws IOException, InterruptedException {
-        this.logger.info("RUNNING CODE " + request.code);
+        
         CodeRunResponse response = new CodeRunResponse();
         // writes the code to a unique file with some unique name
         String fileName = request.mainClassName + ".java"; // unique name for each file
         PrintWriter out = new PrintWriter(fileName);
         out.println(request.code); // write code to file
+        response.fileSize = request.code.length();
         out.close(); // close file
 
         // start the counter

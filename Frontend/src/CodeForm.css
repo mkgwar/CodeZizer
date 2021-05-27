@@ -125,12 +125,11 @@
     color: rgb(192, 79, 79);
 }
 
-.timer_result
+.timer_result, .memory_result
 {
     font-family: "Agency FB";
     font-weight: bold;
     font-size: 1.2em;
-    text-align: center;
     display: block;
     margin-top: 10%;
     margin-bottom: none;
@@ -141,4 +140,18 @@
     width: 80px;
     height: 80px;
     margin-left: 3%;
+}
+
+.time_header
+{
+    float: left;
+    width: 40%;
+    text-align: center;
+}
+
+.memory_header
+{
+    float:left;
+    width: 40%;
+    text-align: center;
 }
