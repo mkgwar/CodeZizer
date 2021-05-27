@@ -21,7 +21,7 @@ class CodeForm extends Component
             compileError: '',
             runtimeError: '',
             timeToRun: '',
-            fileSize: ''
+            memoryUsed: ''
         }
     }
 
@@ -68,7 +68,7 @@ class CodeForm extends Component
                         compileError: response.data.compileError,
                         runtimeError: response.data.runtimeError,
                         timeToRun: response.data.timeToRun + " ms",
-                        fileSize : response.data.fileSize + " Bytes"
+                        memoryUsed : response.data.memoryUsed + " KB"
                     }
                 )
             })
@@ -133,8 +133,8 @@ class CodeForm extends Component
                <div className= "timer_result"> {this.state.timeToRun} </div>
             </p>
 
-            <p className = "memory_header"><b>Memory</b>
-            <div className = "memory_result"> {this.state.fileSize}</div>
+            <p className = "memory_header"><b>Memory Used</b>
+            <div className = "memory_result"> {this.state.memoryUsed}</div>
             </p>
             
             </div>

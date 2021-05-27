@@ -19,11 +19,11 @@ public class CodeRunService {
         String fileName = request.mainClassName + ".java"; // unique name for each file
         PrintWriter out = new PrintWriter(fileName);
         out.println(request.code); // write code to file
-        response.fileSize = request.code.length();
         out.close(); // close file
 
         // start the counter
         long startTime = System.currentTimeMillis();
+        long beforeUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
 
         // compile the code
         this.compile(fileName, response);
@@ -39,6 +39,9 @@ public class CodeRunService {
         // run the compiled code
         this.runClass(request.mainClassName, response);
         response.timeToRun = (System.currentTimeMillis() - startTime);
+        long afterUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
+        response.memoryUsed = (afterUsedMem - beforeUsedMem)/1024;
+
 
         // cleanup the files
         File file = new File(fileName);

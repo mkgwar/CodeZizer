@@ -5,7 +5,7 @@ public class CodeRunResponse {
     public String compileError;
     public String runTimeError;
     public long timeToRun;
-    public long fileSize;
+    public long memoryUsed;
 
     public CodeRunResponse() {
         this.output = "";
