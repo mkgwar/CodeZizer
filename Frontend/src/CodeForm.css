@@ -45,16 +45,10 @@
     border-radius: 10px;
 }
 
-.form button:hover
-{
-    background:black;
-    color: white;
-}
-
 .output_div p
 {
     margin: 5%;
-    margin-bottom: 20%;
+    margin-bottom: 5%;
     display: block;
 }
 
@@ -66,6 +60,9 @@
     margin-bottom: none;
     font-size: 1.1em;
     font-weight: 500;
+    width: 100%;
+    height:200px;
+    overflow-y: scroll;
 }
 
 .logo
@@ -113,4 +110,8 @@
     font-family: "Agency FB";
     font-weight: bold;
     font-size: 1.2em;
+    text-align: center;
+    display: block;
+    margin-top: 10%;
+    margin-bottom: none;
 }

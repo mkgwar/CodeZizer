@@ -117,9 +117,7 @@ class CodeForm extends Component
             </p>
 
             <p><b>Time to Run</b>
-            <span>
                <div className= "timer_result"> {this.state.timeToRun} </div>
-            </span>
             </p>
             
             </div>
